@@ -71,16 +71,16 @@ function Chat() {
                 </div>
             </div>
 
-            <div className='chat_body'>
+            <div className='chat__body'>
                 {messages.map(message => (
-                    <p className={`chat_message ${ message.name == user.displayName && 'chat_receiver'}`}>
-                        <span className="chat_name">{message.name}</span>
+                    <p className={`chat__message ${ message.name == user.displayName && 'chat__receiver'}`}>
+                        <span className="chat__name">{message.name}</span>
                         {message.message}
-                        <span className="chat_timestemp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>
+                        <span className="chat__timestamp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>
                     </p>
                 ))}
             </div>
-            <div className='chat_footer'>
+            <div className='chat__footer'>
                 <InsertEmoticonIcon />
                 <form>
                     <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Type a message"/>
